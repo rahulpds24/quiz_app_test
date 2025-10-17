@@ -1,3 +1,4 @@
-# quiz_app_test
+# English Grammar Basics Quiz
 
-Auto-generated Round 2 build.
+## Round 2 Brief
+This is an updated version of the English Grammar Basics Quiz. It now includes two additional questions to enhance your learning experience. Test your knowledge and see how well you score!
