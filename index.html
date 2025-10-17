@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz App</h1>
+    <div id="quiz"></div>
+    <button id="submit">Submit</button>
+    <div id="result"></div>
+
+    <script>
+        const questions = [
+            {
+                question: 'What is 2 + 2?',
+                options: ['3', '4', '5', '6'],
+                answer: '4'
+            },
+            {
+                question: 'What is 5 - 3?',
+                options: ['1', '2', '3', '4'],
+                answer: '2'
+            }
+        ];
+
+        let score = 0;
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('question');
+                questionElement.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+
+                q.options.forEach(option => {
+                    questionElement.innerHTML += `<div class='options'><input type='radio' name='question${index}' value='${option}'> ${option}</div>`;
+                });
+
+                quizContainer.appendChild(questionElement);
+            });
+        }
+
+        function submitQuiz() {
+            questions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name='question${index}']:checked`);
+                if (selectedOption && selectedOption.value === q.answer) {
+                    score++;
+                }
+            });
+            document.getElementById('result').innerHTML = `<h2>Score: ${score}/${questions.length}</h2><p>Solved Success!</p>`;
+        }
+
+        document.getElementById('submit').addEventListener('click', submitQuiz);
+
+        loadQuiz();
+    </script>
+</body>
+</html>
