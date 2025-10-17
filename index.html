@@ -1,2 +1,11 @@
-<html><body><pre>{
-  "app_code": "const quizData = [\n    {\n        question: 'What is the correct form of the verb in this sentence: She ___ to the store every Saturday.',\n        a: 'go',\n        b: 'goes',\n        c: 'gone',\n        d: 'going',\n        correct: 'b'\n    },\n    {\n        question: 'Which sentence is grammatically correct?',\n        a: 'He don\'t like pizza.',\n        b: 'He doesn\'t likes pizza.',\n        c: 'He doesn\'t like pizza.',\n        d: 'He not like pizza.',\n        correct: 'c'\n    },\n    {\n        question: 'Choose the correct word: I have ___ apples than you.',\n        a: 'less',\n        b: 'fewer',\n        c: 'least',\n        d: 'more',\n        correct: 'b'\n    },\n    {\n        question: 'Identify the error: She runned to the park.',\n        a: 'She',\n        b: 'runned',\n        c: 'to',\n        d: 'the',\n        correct: 'b'\n    }\n];\n\nconst quizContainer = document.getElementById('quiz');\nconst submitButton = document.getElementById('s</pre></body></html>
+<div id="quiz">
+    <h2>English Grammar Basics Quiz</h2>
+    <div class="question-container">
+        <p id="question"></p>
+        <label><input type="radio" name="answer" id="a"> <span></span></label>
+        <label><input type="radio" name="answer" id="b"> <span></span></label>
+        <label><input type="radio" name="answer" id="c"> <span></span></label>
+        <label><input type="radio" name="answer" id="d"> <span></span></label>
+    </div>
+    <button id="submit">Submit</button>
+</div>
